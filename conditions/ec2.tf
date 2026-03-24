@@ -1,6 +1,6 @@
 resource "aws_instance" "my_instance" {
   ami           = var.ami_id
-  instance_type = var.env == dev ? "t3.micro" : "t3.small"
+  instance_type = var.environment == dev ? "t3.micro" : "t3.small"
   vpc_security_group_ids = [aws_security_group.my_sg.id]
   tags = var.tags
 }
