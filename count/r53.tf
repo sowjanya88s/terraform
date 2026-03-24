@@ -3,5 +3,5 @@ resource "aws_route53_record" "www" {
   name    = var.zone_name
   type    = "A"
   ttl     = 1
-  records = "${aws_instance.my_instance.[count.index]}"."${var.zone_name}"
+  records = "${var.instances[count.index]}"."${var.zone_name}"
 }
