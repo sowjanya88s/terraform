@@ -60,11 +60,11 @@ variable "zone_name" {
 }
 
 variable "fruits" {
-    type = list
+    type = list(string)
     default = ["apple", "mango", "apple", "guava"]
 }
 
 variable "set_fruits" {
-    type = set
+    type = set(string)
     default = ["apple", "mango", "apple", "guava"]
 }
