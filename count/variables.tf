@@ -16,7 +16,7 @@ variable "sg_name" {
 
 variable "instances" {
     type = list
-    default = ["mongodb", "catalogue"]
+    default = ["mongodb", "catalogue", "redis", "mysql", "user", "cart", "shipping", "payment", "rabbitmq", "frontend"]
 }
 
 variable "sg_description" {
