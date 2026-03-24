@@ -58,3 +58,13 @@ variable "zone_name" {
     type = string
     default = "sowjanya.fun"
 }
+
+variable "fruits" {
+    type = list
+    default = ["apple", "mango", "apple", "guava"]
+}
+
+variable "set_fruits" {
+    type = set
+    default = ["apple", "mango", "apple", "guava"]
+}
