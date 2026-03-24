@@ -5,7 +5,7 @@ variable "ami_id" {
 
 variable "environment" {
     type = string
-    default = "prod"
+    default = "dev"
 }
 
 
