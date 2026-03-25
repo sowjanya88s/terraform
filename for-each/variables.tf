@@ -6,16 +6,16 @@ variable "zone_name" {
     type = string
     default = "sowjanya.fun"
 }
-variable "instances" {
+ /*  variable "instances" {
     type = map
     default = {
         mongodb = "t3.micro"
         catalogue = "t3.micro"
         redis = "t3.small"
     }
-}
-
-/* variable "instances" {
-    type = toset(instances)
-    default = ["mongodb", "redis"]
 } */
+
+ variable "instances" {
+    type = list
+    default = ["mongodb", "redis"]
+} 
