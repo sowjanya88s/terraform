@@ -14,7 +14,7 @@ resource "aws_security_group" "my_sg" {
   description = "Allow TLS inbound traffic and all outbound traffic"
 
     dynamic "ingress" {
-    for_each = var.ingress_rules
+    for_each = toset(var.ingress_rules)
     content {
       from_port = ingress.value.port
       to_port = ingress.value.port
@@ -31,5 +31,8 @@ resource "aws_security_group" "my_sg" {
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
+  }
+  tags = {
+    Name = "roboshop-sg"
   }
 }
