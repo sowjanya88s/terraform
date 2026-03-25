@@ -1,7 +1,7 @@
 resource "aws_instance" "my_instance" {
     for_each = var.instances
   ami           = "ami-0220d79f3f480ecf5"
-  instance_type = ecah.value
+  instance_type = each.value
   vpc_security_group_ids = [aws_security_group.my_sg.id]
   tags = {
     Name = each.value
