@@ -4,5 +4,5 @@ resource "aws_route53_record" "www" {
   name    = "${each.key}.${var.zone_name}"
   type    = "A"
   ttl     = 1
-  records = [each.key.private_ip]
+  records = [each.value.private_ip]
 }
