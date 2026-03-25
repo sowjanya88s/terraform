@@ -4,7 +4,7 @@ resource "aws_instance" "my_instance" {
   instance_type = each.value
   vpc_security_group_ids = [aws_security_group.my_sg.id]
   tags = {
-    Name = each.value
+    Name = each.key
     Env = "dev"
   }
 }
