@@ -12,6 +12,7 @@ variable "zone_name" {
         mongodb = "t3.micro"
         catalogue = "t3.micro"
         redis = "t3.small"
+        frontend = "t3.micro"
     }
 } 
 

@@ -13,6 +13,7 @@ resource "aws_route53_record" "frontend" {
   name    = "roboshop.${var.zone_name}"
   type    = "A"
   ttl     = 1
-  records = [lookup(aws_instance.my_instance, "frontend").private_ip]
+  records = [lookup(aws_instance.my_instance, "frontend").public_ip]
+  allow_overwrite = true
 }
 
