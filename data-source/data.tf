@@ -17,4 +17,6 @@ data "aws_ami" "example" {
     values = ["hvm"]
   }
 }
-
+data "aws_instance" "terraform_instance" {
+    instance_id = "i-07b48eeddb46498d0"
+}
