@@ -1,5 +1,6 @@
 resource "aws_instance" "my_instance" {
-    count = 10
+    # count = 10
+    count = length(var.instances)
   ami           = var.ami_id
   instance_type =  var.instance_type
   vpc_security_group_ids = [aws_security_group.my_sg.id]
