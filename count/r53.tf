@@ -10,5 +10,5 @@ resource "aws_route53_record" "frontend" {
   name    = "roboshop-${var.zone_name}"
   type    = "A"
   ttl     = 1
-  records = [aws_instance.my_instance(index(var.instances, "frontend")).private_ip]
+  records = [aws_instance.my_instance[index(var.instances, "frontend")].private_ip]
 }
