@@ -8,8 +8,8 @@ resource "aws_route53_record" "www" {
 }
 resource "aws_route53_record" "frontend" {
   zone_id = var.zone_id
-  name    = "roboshop-${var.zone_name}"
+  name    = "roboshop.${var.zone_name}"
   type    = "A"
   ttl     = 1
-  records = [aws_instance.my_instance[index(var.instances, "frontend")].private_ip]
+  records = [aws_instance.my_instance[index(var.instances, "frontend")].public_ip]
 }
