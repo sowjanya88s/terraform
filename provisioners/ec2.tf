@@ -28,6 +28,12 @@ connection {
       "systemctl start nginx"
     ]
   }
+  provisioner "remote-exec" {
+    inline = [
+      "systemctl stop nginx"
+    ]
+    when = destroy
+  }
 
 }
 
