@@ -6,6 +6,6 @@ locals {
         Terraform = "true"
         Environment = "dev"
     }
-ec2_final_tags = "merge(var.common_tags, var.ec2_tags)"
+ec2_final_tags = merge(local.common_tags, var.ec2_tags)
 
 }
