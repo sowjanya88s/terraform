@@ -14,7 +14,14 @@ resource "aws_instance" "my_instance" {
 provisioner "local-exec" {
   interpreter = ["bash", "-c"]
   command = "exit 1"
+  on_failure = continue
 }
+connection {
+    type     = "ssh"
+    user     = "ec2-user"
+    password = "DevOps321"
+    host     =  self.public_ip
+  }
 
 }
 
