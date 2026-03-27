@@ -7,11 +7,12 @@ resource "aws_instance" "my_instance" {
     Env = "dev"
   }
  provisioner "local-exec" {
-  # interpreter = ["bash", "-c"]
+  interpreter = ["bash", "-c"]
   command     = "echo ${self.public_ip} > inventory.ini"
 }
 
 provisioner "local-exec" {
+  interpreter = ["bash", "-c"]
   command = "exit 1"
 }
 
