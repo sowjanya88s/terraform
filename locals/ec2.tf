@@ -2,7 +2,7 @@ resource "aws_instance" "my_instance" {
   ami           = "ami-0220d79f3f480ecf5"
   instance_type = local.instance_type
   vpc_security_group_ids = [aws_security_group.my_sg.id]
-  tags = local.ec2_name
+  tags = local.ec2_tags
 }
 
 resource "aws_security_group" "my_sg" {
