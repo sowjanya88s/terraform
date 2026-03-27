@@ -3,14 +3,15 @@ resource "aws_instance" "my_instance" {
   instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.my_sg.id]
   tags = {
-    Name = "terraform"
+    Name = "provisioners"
     Env = "dev"
   }
-}
-
-provisioner "local-exec" {
+ provisioner "local-exec" {
   command     = "echo ${self.public_ip}" > inventory.ini
 }
+
+}
+
 
 resource "aws_security_group" "my_sg" {
   name        = "terraform-vpc"
