@@ -12,5 +12,8 @@ variable "name" {
  } */
 
  variable "ec2_tags" {
-    default = "locals-demo"
+    default = {
+        Name = "locals-demo"
+        Environment = "prod"
+    }
  }
