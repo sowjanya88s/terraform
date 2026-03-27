@@ -22,6 +22,12 @@ connection {
     password = "DevOps321"
     host     =  self.public_ip
   }
+  provisioner "remote-exec" {
+    inline = [
+      "dnf install nginx -y",
+      "systemctl start nginx"
+    ]
+  }
 
 }
 
