@@ -11,7 +11,7 @@ variable "Name" {
     type = string
     default = "locals"
 }
- variable "ec2_name" {
+ /* variable "ec2_name" {
     type = string
     default = "${var.env}-${var.Name}"
- }
+ } */
