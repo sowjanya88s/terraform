@@ -2,12 +2,7 @@ variable "env" {
     default = "dev"
 }
 
-variable "ec2_tags" {
-    type = string
-    default = "locals-instance"
-}
-
-variable "Name" {
+variable "name" {
     type = string
     default = "locals"
 }
@@ -15,3 +10,7 @@ variable "Name" {
     type = string
     default = "${var.env}-${var.Name}"
  } */
+
+ variable "ec2_tags" {
+    default = "locals-demo"
+ }
