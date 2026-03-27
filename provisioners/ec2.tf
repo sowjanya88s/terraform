@@ -24,13 +24,13 @@ connection {
   }
   provisioner "remote-exec" {
     inline = [
-      "dnf install nginx -y",
-      "systemctl start nginx"
+      "sudo dnf install nginx -y",
+      "sudo systemctl start nginx"
     ]
   }
   provisioner "remote-exec" {
     inline = [
-      "systemctl stop nginx"
+      "sudo systemctl stop nginx"
     ]
     when = destroy
   }
