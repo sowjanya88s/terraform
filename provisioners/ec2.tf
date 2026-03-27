@@ -7,7 +7,7 @@ resource "aws_instance" "my_instance" {
     Env = "dev"
   }
  provisioner "local-exec" {
-  command     = "echo ${self.public_ip}" > inventory.ini
+  command     = "echo ${self.public_ip} > inventory.ini"
 }
 
 }
