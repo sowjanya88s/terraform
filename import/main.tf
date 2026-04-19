@@ -1,0 +1,15 @@
+resource "aws_instance" "example" {
+  ami = "ami-0220d79f3f480ecf5"
+  security_groups = [
+    "practice-sg"
+  ]
+  vpc_security_group_ids = [
+    "sg-06ce163ff833036b8"
+  ]
+  subnet_id     = "subnet-0159a26cb53cb54cc"
+  instance_type = "t3.micro"
+  tags = {
+    "Name" : "import-success"
+  }
+
+}
