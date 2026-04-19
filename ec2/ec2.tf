@@ -9,7 +9,7 @@ resource "aws_instance" "my_instance" {
 }
 
 resource "aws_security_group" "my_sg" {
-  name        = "terraform-vpc"
+  name        = "terraform-vpc-sg"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
   ingress {
@@ -25,5 +25,8 @@ resource "aws_security_group" "my_sg" {
     protocol         = "-1"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
+  }
+   lifecycle {
+    create_before_destroy = true
   }
 }
